@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Libros</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    
+    <header>
+        <h1>Control de Libros de la Sala de Lectura Fundacion Rafael Pombo</h1>
+        <body>
+            <img src="logofrp.png" class="logo" alt="">
+            <img src="gato.png" class="gato" alt="">
+            <img src="rafaelpombo.png" class="Rafa" alt="">
+        </body>   
+
+
+    </header>
+    
+    <main>
+ 
+
+        <section>
+            <h2>Añadir Nuevo Libro</h2>
+            <form id="book-form">
+                <label for="title">Título:</label>
+                <input type="text" id="title" required>
+                <label for="author">Autor:</label>
+                <input type="text" id="author" required>
+                <label for="year">Año:</label>
+                <input type="number" id="year" required>
+                <label for="publisher">Editorial:</label>
+                <input type="text" id="publisher" required>
+                <label for="quantity">Cantidad en Existencia:</label>
+                <input type="number" id="quantity" required>
+                <label for="image">Imagen (URL):</label>
+                <input type="url" id="image" required>
+                <label for="ubication">Ubicación del libro:</label>
+                <input type="text" id="ubication" required>
+                <label for="outOfStock">Agotado:</label>
+                <input type="checkbox" id="outOfStock">
+                <button type="submit">Añadir Libro</button>
+             
+            </form>
+            <input type="text" id="search-book" placeholder="Buscar por título, autor o editorial">
+            <button id="download-excel">Descargar Inventario en Excel</button>
+            
+        </section>
+       
+        <section>
+            <h2>Lista de Libros</h2>
+            <ul id="book-list"></ul>
+        </section>
+        <section>
+            <h2>Control de Prestamo de libros</h2>
+            <form id="order-form">
+                <label for="books">Libro:</label>
+                <input type="text" id="books" required>
+                <label for="buyer">Nombre del Comprador:</label>
+                <input type="text" id="buyer" required>
+                <label for="orderDate">Fecha del Pedido:</label>
+                <input type="date" id="orderDate" required>
+                <label for="city">Ciudad:</label>
+                <input type="text" id="city" required>
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" required>
+                <label for="email">Correo:</label>
+                <input type="text" id="school" required>
+                <label for="status">Estado:</label>
+                <select id="status" required>
+                    <option value="pagado">Pagado</option>
+                    <option value="procesado">Procesado</option>
+                    <option value="cancelado">Cancelado</option>
+                </select>
+                <button type="submit">Añadir Pedido</button>
+            </form>
+            <input type="text" id="search-order" placeholder="Buscar por Libro, comprador, ciudad o colegio">
+        </section>
+        <section>
+            <h2>Lista de Prestamos</h2>
+            <ul id="order-list"></ul>
+        </section>
+       
+        
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
+
